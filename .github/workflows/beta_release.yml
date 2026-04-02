@@ -117,7 +117,7 @@ jobs:
         uses: OpenListTeam/cgo-actions@v1.2.2
         with:
           targets: ${{ matrix.target }}
-          flags: ${{ matrix.flags }}
+          flags: ${{ matrix.flags || '-ldflags=' }}
           musl-target-format: $os-$musl-$arch
           github-token: ${{ secrets.GITHUB_TOKEN }}
           out-dir: build
